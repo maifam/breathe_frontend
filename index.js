@@ -5,11 +5,14 @@ const menuList = document.querySelector('#menu-list')
 const signUpForm = document.querySelector('#signup-form')
 const heartDiv = document.querySelector('.wrapper')
 const userInput = signUpForm.querySelector('input')
+const carousel = document.querySelector('.carousel')
 
 let category 
 let currentUser
 let currentUserId
 let heartId
+let categoryAudioArr = []
+
 
 // FUNCTIONS // 
 renderLoginForm()
@@ -24,6 +27,7 @@ function renderAllAudio(){
             fetch(`http://localhost:3000/users/${currentUserId}`)
             .then(res => res.json())
             .then(userObj => renderFavList(userObj))
+            renderMyFavTitle()
         } else {
             category = e.target.textContent
             let arr = []
@@ -33,11 +37,12 @@ function renderAllAudio(){
                 audioArr.forEach((audioObj) => {
                     if (audioObj.category === category){
                         arr.push(audioObj)
+                        categoryAudioArr.push(audioObj)
                     }
                 })
                
                 arr.forEach(audio => {
-                
+                    // renderCategory(audio)
                     let track = document.createElement('audio')
                     track.setAttribute('controls', 'controls')
                     track.canPlayType('audio/mpeg')
@@ -51,18 +56,35 @@ function renderAllAudio(){
                     // trackdiv.append(track)
                     renderHeart(audio)
                 })
-
+                    //debugger
+                    let firstAudio = categoryAudioArr[0]
+                    renderCategory(firstAudio)
             })  
         } 
     })
 }  
+
+function renderMyFavTitle() {
+    let favTitle = document.querySelector('h4')
+    favTitle.textContent = 'My Favorite List'
+    carousel.append(favTitle)
+}
+
+function renderCategory(firstAudio){
+   // console.log(audioObj.category)
+    carousel.innerHTML = ''
+    let title = document.createElement('h4')
+    title.textContent = firstAudio.category
+    carousel.append(title)
+    categoryAudioArr = []
+}
 
 
 function renderHeart(audio){
     
     const heartBox = document.createElement('button')
     const whiteHeart = '🤍 '
-    const redHeart = '🧡 '
+    const redHeart = '❤️'
     heartBox.dataset.id = audio.id
     heartBox.textContent = whiteHeart
 
@@ -140,7 +162,7 @@ function renderFavList(userObj){
 function renderFavHeart(meditationList){
     const heartBox = document.createElement('button')
     const whiteHeart = '🤍 '
-    const redHeart = '🧡 '
+    const redHeart = '❤️'
 
     heartBox.textContent = redHeart
 
