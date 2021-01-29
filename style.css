@@ -82,16 +82,29 @@ h1 {
     text-align: center;
     color: rgb(213, 225, 238);
     align-items: center;
+    cursor: pointer;
 }
 
 #heart{
-
-  size: 100px;
+    border: none;
+    background: none;
     color: red;
     cursor: pointer;
-    /* position: relative;
-    align-items:baseline; */
+    font-size: 40px;
+    margin: -50px;
+   
+    /* //align-items:baseline;  */
 }
+
+.fav-heart{
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer;
+    font-size: 40px;
+    margin-left:-150px
+}
+
 
 .parent {
   display: grid;
@@ -102,14 +115,31 @@ h1 {
   }
   
   .div1{grid-area: 1 / 1 / 6 / 4;}
+
   .div2{ 
     grid-area: 3 / 4 / 6 / 8; 
     position: sticky;
     overflow: scroll;
-    height: 25em;
+    height: 20em;
+    width: 40em;
 }
   .div3{ grid-area: 1 / 4 / 3 / 10; }
 
+.btn-primary{
+    
+    background-color: rgb(250, 247, 242);
+    border: 4px solid darken(#d48f0d, 5%);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Great Vibes', cursive;
+}
+
+.btn-primary:hover {
+        background-color: darken(#d48f0d, 5%);
+        color: #d48f0d;
+        box-shadow: 0 12px 20px 0 rgba(250, 225, 3, 0.7), 0 17px 50px 0 rgba(0,0,0,0.19);
+        transition: 0.3s;
+}
 
   /* TEST CODE BELOW */
 

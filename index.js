@@ -45,12 +45,13 @@ function renderAllAudio(){
                     let meditationList = document.createElement('li')
                     meditationList.setAttribute('class', "meditation-list")
                     meditationList.textContent = audio.name 
-
+                    
                     meditationList.append(track)
                     trackdiv.append(meditationList)
                     // trackdiv.append(track)
                     renderHeart(audio)
                 })
+
             })  
         } 
     })
@@ -60,8 +61,8 @@ function renderAllAudio(){
 function renderHeart(audio){
     
     const heartBox = document.createElement('button')
-    const whiteHeart = '\u2661'
-    const redHeart = '\u2665'
+    const whiteHeart = '🤍 '
+    const redHeart = '🧡 '
     heartBox.dataset.id = audio.id
     heartBox.textContent = whiteHeart
 
@@ -138,18 +139,17 @@ function renderFavList(userObj){
 
 function renderFavHeart(meditationList){
     const heartBox = document.createElement('button')
-    const whiteHeart = '\u2661'
-    const redHeart = '\u2665'
+    const whiteHeart = '🤍 '
+    const redHeart = '🧡 '
 
     heartBox.textContent = redHeart
 
-    heartBox.setAttribute('id', 'heart')
+    heartBox.setAttribute('class', 'fav-heart')
     meditationList.append(heartBox)
 
     heartBox.addEventListener('click', function(e){
             heartBox.textContent = whiteHeart;
             removeAudioFromCurrentList(heartId)
-            debugger
             trackdiv.removeChild(e.target.closest('li'))       
 
     })
