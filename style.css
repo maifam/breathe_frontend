@@ -23,12 +23,15 @@ h1 {
 .side-nav{
     width: 20%;
     height:100%;
-    background: rgba(240, 234, 234, .5);
+    background: rgba(240, 234, 234, .7);
     float: left;
     position:fixed;
     top: 0;
     z-index: 1;
     overflow: hidden;
+    justify-content: center;
+    
+
 }
 
 .mid-container{
@@ -51,7 +54,7 @@ h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 26px;
     text-align: center;
-    color: rgb(104, 62, 24);
+    color: rgb(153, 104, 61);
 
 }
 
@@ -70,7 +73,6 @@ h1 {
     font-size: 20px;
     text-align: center;
     color: white;
-    
 }
 
 #signup-form {
@@ -85,6 +87,13 @@ h1 {
     cursor: pointer;
 }
 
+img {
+  width: 70%;
+  margin: auto;
+  display: block;
+
+}
+
 #heart{
     border: none;
     background: none;
@@ -92,8 +101,6 @@ h1 {
     cursor: pointer;
     font-size: 40px;
     margin: -50px;
-   
-    /* //align-items:baseline;  */
 }
 
 .fav-heart{
@@ -112,7 +119,7 @@ h1 {
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  }
+}
   
   .div1{grid-area: 1 / 1 / 6 / 4;}
 
@@ -137,7 +144,7 @@ h1 {
 .btn-primary:hover {
         background-color: darken(#d48f0d, 5%);
         color: #d48f0d;
-        box-shadow: 0 12px 20px 0 rgba(250, 225, 3, 0.7), 0 17px 50px 0 rgba(0,0,0,0.19);
+        box-shadow: 0 12px 20px 0 rgba(129, 183, 214, 0.7), 0 17px 50px 0 rgba(215, 222, 231, 0.19);
         transition: 0.3s;
 }
 
@@ -239,3 +246,18 @@ h1 {
    }
    
    [data-am-gallery] .dot:hover { opacity: 0.8; } 
+
+
+audio {
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #006773;
+  -webkit-box-shadow:  2px 2px 4px 0px #006773;
+  box-shadow: 2px 2px 4px 0px #006773;
+  -moz-border-radius:7px 7px 7px 7px ;
+  -webkit-border-radius:7px 7px 7px 7px ;
+  border-radius:7px 7px 7px 7px ;
+  background: rgba(180, 170, 154, 0.3)
+}
