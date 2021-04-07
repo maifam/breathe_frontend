@@ -24,14 +24,14 @@ function renderAllAudio(){
     menuList.addEventListener('click', function(e){
         trackdiv.innerHTML = ''
         if (e.target.matches('#favorites')) {
-            fetch(`http://localhost:3000/users/${currentUserId}`)
+            fetch(`https://polar-beyond-99960.herokuapp.com//users/${currentUserId}`)
             .then(res => res.json())
             .then(userObj => renderFavList(userObj))
             renderMyFavTitle()
         } else {
             category = e.target.textContent
             let arr = []
-            fetch('http://localhost:3000/audios')
+            fetch('https://polar-beyond-99960.herokuapp.com/audios')
             .then(resp => resp.json())
             .then(audioArr => {
                 audioArr.forEach((audioObj) => {
@@ -113,14 +113,14 @@ function renderHeart(audio){
 
 
 function removeAudioFromCurrentList(heartId){
-    fetch(`http://localhost:3000/favorites/${heartId}`, {
+    fetch(`https://polar-beyond-99960.herokuapp.com/favorites/${heartId}`, {
         method: 'DELETE'
     })
 
 }
 
 function addAudioToCurrentList(audio){
-    fetch(`http://localhost:3000/favorites`, {
+    fetch(`https://polar-beyond-99960.herokuapp.com/favorites`, {
         method: 'POST',
         headers: {
             'Content-Type': "application/json"
@@ -213,7 +213,7 @@ function renderLoginForm(){
      
       e.preventDefault()
 
-      fetch('http://localhost:3000/users')
+      fetch('https://polar-beyond-99960.herokuapp.com/users')
       .then(res => res.json())
       .then(users => getUser(users))
   })
@@ -290,7 +290,7 @@ function renderSignUpForm(){
 
         let newUser = e.target.usernameInput.value
 
-        fetch('http://localhost:3000/users',{
+        fetch('https://polar-beyond-99960.herokuapp.com/users',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
