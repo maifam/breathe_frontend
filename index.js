@@ -81,7 +81,6 @@ function renderCategory(firstAudio){
 
 
 function renderHeart(audio){
-    
     const heartBox = document.createElement('button')
     const whiteHeart = '🤍 '
     const redHeart = '❤️'
@@ -116,7 +115,6 @@ function removeAudioFromCurrentList(heartId){
     fetch(`https://polar-beyond-99960.herokuapp.com/favorites/${heartId}`, {
         method: 'DELETE'
     })
-
 }
 
 function addAudioToCurrentList(audio){
