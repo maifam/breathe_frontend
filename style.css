@@ -69,7 +69,6 @@ h4 {
     color: rgb(230, 237, 240);
     font-family:'Lucida Sans', cursive;
     text-shadow: 4px 4px rgb(5, 4, 0);
-    /* text-transform: scale(2); */
     transition: width 350ms ease-in-out;
     letter-spacing: 3px;
     border: 1px solid;
@@ -105,7 +104,6 @@ h4 {
   width: 70%;
   margin: auto;
   display: block;
-  /* position:relative; */
 }
 
 .logo figure::before {
